@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Coin
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - BackgroundDetails
+  - Background
   - 
   - 
   - 
@@ -41,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2873766533
+    locked: 0
+  - name: BackgroundDetails
+    uniqueID: 3188127287
     locked: 0
   - name: Default
     uniqueID: 0
