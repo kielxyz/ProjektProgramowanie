@@ -15,6 +15,8 @@ public class Sc_PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 6f;
     [SerializeField] private LayerMask jumpableGround;
 
+    [SerializeField] private AudioSource jumpSFX;
+
     private enum MovementState { idle, running, jumping, falling }
 
     private void Start()
@@ -52,6 +54,7 @@ public class Sc_PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            jumpSFX.Play();
             rb.linearVelocity = new Vector2(0, jumpForce);
         }
     }

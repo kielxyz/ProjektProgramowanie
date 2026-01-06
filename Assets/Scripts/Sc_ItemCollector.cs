@@ -8,10 +8,12 @@ public class Sc_ItemCollector : MonoBehaviour
     private int coins = 0;
 
     [SerializeField] private Text CoinsText;
+    [SerializeField] private AudioSource coinSFX;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Coin"))
         {
+            coinSFX.Play();
             coins++;
             Destroy(collision.gameObject);
             Debug.Log("Coins: " + coins);
