@@ -7,6 +7,7 @@ public class Sc_Player_Health : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
+    private Camera cam;
 
     [SerializeField] private AudioSource deathSFX;
 
@@ -22,9 +23,16 @@ public class Sc_Player_Health : MonoBehaviour
         {
             Debug.Log("Player hit by Trap!");
             Die();
-
+        }
+        else if (collision.gameObject.CompareTag("FallOffBox"))
+        {
+            Debug.Log("Player fell off the map!");
+            deathSFX.Play();
+            anim.SetTrigger("death");
+            Invoke("RestartLevel", 3f);
         }
     }
+
 
     private void Die()
     {
