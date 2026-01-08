@@ -20135,8 +20135,12 @@ PrefabInstance:
       value: Fall Off Box
       objectReference: {fileID: 0}
     - target: {fileID: 8163425411116784767, guid: 226e6a03969a7164890e6d5551c9698b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163425411116784767, guid: 226e6a03969a7164890e6d5551c9698b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.2
+      value: -18.07
       objectReference: {fileID: 0}
     - target: {fileID: 8163425411116784767, guid: 226e6a03969a7164890e6d5551c9698b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20187,6 +20191,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1762481951049202460, guid: a4b4361849e575e4099686b7805d8c74, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1786427667955272382, guid: a4b4361849e575e4099686b7805d8c74, type: 3}
       propertyPath: m_Name
       value: Player

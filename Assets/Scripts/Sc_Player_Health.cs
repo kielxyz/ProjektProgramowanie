@@ -27,9 +27,7 @@ public class Sc_Player_Health : MonoBehaviour
         else if (collision.gameObject.CompareTag("FallOffBox"))
         {
             Debug.Log("Player fell off the map!");
-            deathSFX.Play();
-            anim.SetTrigger("death");
-            Invoke("RestartLevel", 3f);
+            Die();
         }
     }
 
