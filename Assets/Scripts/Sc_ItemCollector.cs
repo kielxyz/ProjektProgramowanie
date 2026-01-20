@@ -1,23 +1,21 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class Sc_ItemCollector : MonoBehaviour
 {
-    private int coins = 0;
-
+    private int coins;
     [SerializeField] private Text CoinsText;
     [SerializeField] private AudioSource coinSFX;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Coin"))
+        var collectable = collision.GetComponent(typeof(ICollectable)) as ICollectable;
+        if (collectable != null)
         {
-            coinSFX.Play();
-            coins++;
-            Destroy(collision.gameObject);
-            Debug.Log("Coins: " + coins);
-            CoinsText.text = "Coins: " + coins;
+            int v = collectable.Collect(gameObject);
+            coins += v;
+            if (coinSFX != null) coinSFX.Play();
+            if (CoinsText != null) CoinsText.text = "Coins: " + coins;
         }
     }
 }

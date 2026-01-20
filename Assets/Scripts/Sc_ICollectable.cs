@@ -1,0 +1,7 @@
+using UnityEngine;
+
+public interface ICollectable
+{
+    // Zwraca wartoœæ (np. iloœæ monet). Implementacja powinna zniszczyæ lub ukryæ obiekt.
+    int Collect(GameObject collector);
+}
